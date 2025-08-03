@@ -1565,6 +1565,10 @@ Version      : 1.0
         font-size: 40px;
         line-height: 60px;
     }
+      .row
+ {
+    --bs-gutter-x: 10px;
+}
 }
 
 
