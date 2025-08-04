@@ -1496,6 +1496,10 @@ Version      : 1.0
         padding: 0 15px;
     }
 }
+
+
+
+/* Responsive CSS For Mobile , Tablet and Laptop */
 @media only screen and (max-width: 1024px) {
     .hero-content h1{
         font-size: 100px;
@@ -1517,8 +1521,6 @@ Version      : 1.0
 }
 
 }
-
-
 @media only screen and (max-width: 768px) {
     .hero-content h1{
         font-size: 80px;
