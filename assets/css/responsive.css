@@ -1496,8 +1496,68 @@ Version      : 1.0
         padding: 0 15px;
     }
 }
+@media only screen and (max-width: 1024px) {
+    .hero-content h1{
+        font-size: 100px;
+    }
+    .about-content-part p {
+    font-size: 20px;
+}
+.section-title h4 {
+    font-size: 29px;
+}
+    .section-title h2 {
+        font-size: 70px;
+    }
+    .contact-content-part h2 {
+    font-size: 20px;
+}
+.row{
+    --bs-gutter-x: 10px;
+}
+
+}
+
+
 @media only screen and (max-width: 768px) {
-    
+    .hero-content h1{
+        font-size: 80px;
+    }
+    .hero-content p {
+    font-size: 18px;
+}
+.about-content-part p {
+    font-size: 16px;
+}
+.service-item2{
+    height: auto;
+}
+.service-item{
+    height: auto;
+}
+.sevice-area2 .service-item{
+    height: 95%;
+}
+.section-title h4 {
+    font-size: 27px;
+    margin-top: 20px;
+}
+    .resume-wrapper {
+        margin-bottom: 10px;
+    }
+    .resume-box h2 {
+    font-size: 20px;
+}
+    .section-title h2 {
+        font-size: 50px;
+    }
+    .contact-content-part h2 {
+    font-size: 23px;
+}
+.row{
+    --bs-gutter-x: 10px;
+}
+
 }
 @media only screen and (max-width: 600px) {
        .hero-content h1{
