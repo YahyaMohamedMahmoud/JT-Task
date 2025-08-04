@@ -358,97 +358,35 @@ Version      : 1.0
         return pattern.test(emailAddress);
 
     }
-    // $("#contactForm").on('submit', function(e) {
-    //      // handle error messages
+    $("#contactForm").on('submit', function(e) {
+         // handle error messages
 
-    //     e.preventDefault();
-    //     var data = {
-    //         name: $("#name").val(),
-    //         email: $("#email").val(),
-    //         tel: $("#tel").val(),
-    //         message: $("#message").val()
-    //     };
+        e.preventDefault();
+        var data = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            tel: $("#tel").val(),
+            message: $("#message").val()
+        };
 
-    //     if (isValidEmail(data['email']) && (data['message'].length > 1) && (data['name'].length > 1) && (data['tel'].length > 1)) {
-    //         $.ajax({
-    //             type: "POST",
-    //             url: "sendmail.php",
-    //             data: data,
-    //             success: function() {
-    //                 $('#contactForm .input-success').delay(500).fadeIn(1000);
-    //                 $('#contactForm .input-error').fadeOut(500);
-    //             }
-    //         });
-    //     } else {
-    //         $('#contactForm .input-error').delay(500).fadeIn(1000);
-    //         $('#contactForm .input-success').fadeOut(500);
-    //     }
+        if (isValidEmail(data['email']) && (data['message'].length > 1) && (data['name'].length > 1) && (data['tel'].length > 1)) {
+            $.ajax({
+                type: "POST",
+                url: "sendmail.php",
+                data: data,
+                success: function() {
+                    $('#contactForm .input-success').delay(500).fadeIn(1000);
+                    $('#contactForm .input-error').fadeOut(500);
+                }
+            });
+        } else {
+            $('#contactForm .input-error').delay(500).fadeIn(1000);
+            $('#contactForm .input-success').fadeOut(500);
+        }
 
-    //     return false;
-    // });
+        return false;
+    });
 
-    $("#contactForm").on('submit', function (e) {
-    
-    e.preventDefault();
-
-    // إزالة الرسائل السابقة
-    $(".help-block.with-errors").text('');
-    $(".input-error").hide();
-    $(".input-success").hide();
-
-    var data = {
-        name: $("#name").val().trim(),
-        email: $("#email").val().trim(),
-        tel: $("#tel").val().trim(),
-        message: $("#message").val().trim()
-    };
-
-    let valid = true;
-
-    if (data.name.length < 2) {
-        $("#name").closest(".form-group").find(".help-block").text("برجاء إدخال الاسم بشكل صحيح");
-        valid = false;
-    }
-
-    if (!isValidEmail(data.email)) {
-        $("#email").closest(".form-group").find(".help-block").text("برجاء إدخال بريد إلكتروني صحيح");
-        valid = false;
-    }
-
-    if (data.tel.length < 6) {
-        $("#tel").closest(".form-group").find(".help-block").text("برجاء إدخال رقم هاتف صحيح");
-        valid = false;
-    }
-
-    if (data.message.length < 2) {
-        $("#message").closest(".form-group").find(".help-block").text("برجاء إدخال الرسالة");
-        valid = false;
-    }
-
-    if (valid) {
-        $.ajax({
-            type: "POST",
-            url: "sendmail.php",
-            data: data,
-            success: function () {
-                $('#contactForm .input-success').delay(300).fadeIn(500);
-                $('#contactForm .input-error').fadeOut(300);
-                $('#contactForm')[0].reset();
-            },
-            error: function () {
-                $('#contactForm .input-error').delay(300).fadeIn(500);
-                $('#contactForm .input-success').fadeOut(300);
-            }
-        });
-    } else {
-    console.log("hello");
-
-        // لو في أخطاء نعرض رسالة عامة كمان
-        $('#contactForm .input-error').delay(300).fadeIn(500);
-    }
-
-    return false;
-});
 
     /* ==========================================================================
        When document is scroll, do

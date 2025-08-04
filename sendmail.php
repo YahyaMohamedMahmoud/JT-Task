@@ -2,7 +2,7 @@
 // Variables
 $name = trim($_POST['name']);
 $email = trim($_POST['email']);
-$subject = trim($_POST['subject']);
+$tel = trim($_POST['tel']);
 $message = trim($_POST['message']);
 
 // Email address validation - works with php 5.2+
@@ -11,7 +11,7 @@ function is_email_valid($email) {
 }
 
 
-if( isset($name) && isset($email) && isset($subject) && isset($message) && is_email_valid($email) ) {
+if( isset($name) && isset($email) && isset($tel) && isset($message) && is_email_valid($email) ) {
 
 	// Avoid Email Injection and Mail Form Script Hijacking
 	$pattern = "/(content-type|bcc:|cc:|to:)/i";
@@ -21,11 +21,11 @@ if( isset($name) && isset($email) && isset($subject) && isset($message) && is_em
 
 	// Email will be send
 	$to = "hridoywebdev@gmail.com"; // Change with your email address
-	$sub = $subject; // You can define email subject
+	$sub = $tel; // You can define email tel
 	// HTML Elements for Email Body
 	$body = <<<EOD
 	<strong>Name:</strong> $name <br>
-	<strong>Email:</strong> <a href="mailto:$email?subject=feedback" "email me">$email</a> <br> <br>
+	<strong>Email:</strong> <a href="mailto:$email?tel=feedback" "email me">$email</a> <br> <br>
 	<strong>Message:</strong> $message <br>
 EOD;
 //Must end on first column
