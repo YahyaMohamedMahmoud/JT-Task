@@ -2515,7 +2515,9 @@ ul.extra-skills li i {
     width: calc(20% - 60px);
     margin: 0 30px 10px;
 }
-
+ .sidebar__area .mean-nav .menu-last a {
+    color: white;
+ }
 
 /*
 * ----------------------------------------------------------------------------------------
