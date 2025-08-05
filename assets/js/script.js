@@ -368,6 +368,8 @@ Version      : 1.0
             tel: $("#tel").val(),
             message: $("#message").val()
         };
+        console.log(data);
+        
 
         if (isValidEmail(data['email']) && (data['message'].length > 1) && (data['name'].length > 1) && (data['tel'].length > 1)) {
             $.ajax({

@@ -33,19 +33,36 @@ Version      : 1.0
 * 01.GLOBAL STYLE
 * ----------------------------------------------------------------------------------------
 */
+/*  i will import fonts from fonts folder  */
+@font-face {
+  font-family: 'Helvetica Neue LT Arabic 55 Roman';
+  src: url('./../fonts/alfont_com_AlFont_com_helveticaneueltarabicroman1.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* ✅ لتحسين الأداء */
+}
+@font-face {
+  font-family: 'Helvetica Neue LT Arabic 55 Roman bold';
+  src: url('./../fonts/alfont_com_هلفيتيكا-عربي-.ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; /* ✅ لتحسين الأداء */
+}
+
+
 :root {
     --primary-color: #ee4818;
-    --text-color: #d5d5d5;
-    --heading-color: #d5d5d5;
+    --text-color: #4e4e4e;
+    --heading-color: #1f233e;
     --subtitle-color: #d5d5d5;
     --lighter-color: #f7f7f7;
     --black-color: #0F0F0F;
     --border-color: rgba(255, 255, 255, 0.0784313725);
     --button-border: rgba(119, 119, 125, .2);
-    --body-background: #000;
+    --body-background: white;
     --grey-bg: #E6EAEE;
-    --text-font: "Cairo", sans-serif;
-    --title-font: "Cairo", sans-serif;
+  --text-font: 'Helvetica Neue LT Arabic 55 Roman', sans-serif;
+  --title-font: 'Helvetica Neue LT Arabic 55 Roman', sans-serif;
 }
 
 
@@ -89,6 +106,7 @@ h6,
 h1,
 .h1 {
     font-size: 58px;
+    font-family: 'Helvetica Neue LT Arabic 55 Roman';
 }
 
 h2,
@@ -205,8 +223,8 @@ select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
 .nice-select::-webkit-input-placeholder,
 .form-control::-webkit-input-placeholder {
-    color: var(--text-color);
-    opacity: .4;
+    color: holder;
+    opacity: .5;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
 }
 
@@ -400,6 +418,8 @@ html {
     line-height: 70px;
     text-transform: uppercase;
     padding-bottom: 20px;
+    font-weight: 800;
+    color:  #1f233e;
 }
 
 .section-title p {
@@ -425,22 +445,26 @@ html {
 }
 
 .theme-btn {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background: rgb(0, 255, 179);
+    color: black;
     cursor: pointer;
     display: inline-block;
     border: 1px solid var(--button-border);
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 19px;
+    font-weight: 900;
     line-height: 20px;
     margin: 0 5px 10px 0;
     overflow: visible;
-    border-radius: 2px;
-    padding: 20px 34px;
+    border-radius: 30px;
+/* padding: 13px 67px; */
+    padding-top: 13px;
+    padding-bottom: 19px;
+    padding-right: 67px;
+    padding-left: 67px;
     text-align: center;
     text-transform: none;
     -webkit-transition: .3s;
-    transition: .3s
+    transition: .3s;
 }
 
 .theme-btn-two {
@@ -842,7 +866,7 @@ html {
 }
 
 .logo img {
-    width: 120px;
+    width: 180px;
 }
 
 .main-menu {
@@ -881,15 +905,16 @@ html {
 }
 
 .main-menu ul li a {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 20px;
-    font-weight: 500;
+    font-weight: 400;
     padding: 10px 0px;
     display: inline-block;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     text-transform: uppercase;
-    color: var(--main-color);
+    color: white;
+    margin-right: 20px;
 }
 
 .main-menu ul li .active {
@@ -983,7 +1008,7 @@ html {
 }
 
 .side-menu-icon i {
-    color: var(--main-color);
+    color: white;
     font-size: 32px;
     cursor: pointer;
     position: relative;
@@ -1231,15 +1256,15 @@ html {
 * ----------------------------------------------------------------------------------------
 */
 .main-hero-area {
-    padding-top: 300px;
+    padding-top: 250px;
     padding-bottom: 150px;
-    background: url(../images/hero-sec.jpg) no-repeat;
+    background: url(../images/BG.jpg) no-repeat;
     background-position: top center;
     background-size: 100% auto;
 }
 
 .main-hero-image-area {
-    background: url(../images/hero-sec.jpg) no-repeat;
+    background: url(../images/BG.jpg) no-repeat;
     background-size: cover;
     z-index: 1;
     position: relative;
@@ -1248,7 +1273,7 @@ html {
 
 .main-hero-image-area:after {
     position: absolute;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.397);
     left: 0;
     top: 0;
     width: 100%;
@@ -1256,8 +1281,14 @@ html {
     content: "";
     z-index: -1;
 }
+
 .multipage-service-area{
-    padding-top: 100px;
+    padding-top: 30px;
+}
+.services-area h4{
+    font-size: 65px;
+    font-weight: 700;
+    color:   #2e3bd9;
 }
 
 .hero-content {
@@ -1265,17 +1296,19 @@ html {
 }
 
 .hero-content h1 {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 130px;
     text-transform: uppercase;
     text-align: center;
-    color: var(--text-color);
+    color: aqua;
 }
 
 .hero-content p {
     color: var(--text-color);
-    font-size: 27px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    margin: 50px 0;
+    line-height: 1.5;
+    font-weight: 700;
 }
 
 .hero-content img {
@@ -1442,7 +1475,21 @@ html {
 .about-area {
     padding-top: 100px;
     padding-bottom: 100px;
-    background: var(--black-color);
+}
+.about-area h2 {
+    color: black;
+    font-weight: 800;
+    font-size: 50px;
+}
+.icons {
+    width: 50px;
+    fill: white;
+    margin-top: 5px;
+}
+.last-icons{
+    width: 60px;
+
+    fill:  #1f233e;
 }
 
 .hero-content .job {
@@ -1482,9 +1529,10 @@ html {
 }
 
 .about-content-part p {
-    font-size: 24px;
+    font-size: 37px;
     line-height: 1.4em;
     font-weight: 400;
+    color: #868686;
 }
 .about-content-part h5{
     font-size: 20px;
@@ -1651,35 +1699,6 @@ h2.about-pre-title {
 * 06.SERVICE CSS STYLE
 * ----------------------------------------------------------------------------------------
 */
-#oml1 , #solves{
-    padding-bottom: 100px;
-    background: url(../images/ai-image.jpg) no-repeat;
-   background-position: center ;
-   background-size: cover;
-    position: relative;
-}
-#oml1::after , #solves::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0;
-}
-#oml1 .container{
-    position: relative;
-    z-index: 1;
-}
-#solves .container{
-    position: relative;
-    z-index: 1;
-}
-#solves .section-title {
-    position: relative;
-    z-index: 1;
-}
 
 .service-item {
     height: 390px;
@@ -1687,16 +1706,67 @@ h2.about-pre-title {
     padding: 60px 40px;
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    background: var(--black-color);
     margin-bottom: 30px;
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    background-color: #9bcaea;
+}
+.sevice-area2{
+    padding-bottom: 100px;
+}
+.sevice-area2 .service-item {
+    height: 335px;
+    padding: 60px 71px;
+}
+.sevice-area2 .service-item h4 {
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+.sevice-area2 .service-item .icons {
+    fill: #1f233e;
+    width: 60px;
+    margin-top: 0px;
+}
+.sevice-area2 .items3 .icons {
+    fill: #00e3b5;
+    width: 60px;
+    margin-top: 0px;
+}
+.sevice-area2 .items3 h4 {
+    color: #00e3b5;
+}
+.sevice-area2 .items3 p{
+    color: white;
+}
+.sevice-area2 .items5{
+    background-color:  #2e3bd9;
+}
+.sevice-area2 .items5 h4{
+    color: #04dbfa;
+}
+.sevice-area2 .items5 .icons{
+    fill: #04dbfa;
+    width: 60px;
+    margin-top: 0px;
+}
+.sevice-area2 .items5 p{
+    color: white;
 }
 
 .service-item2{
     height: 435px;
-    
 }
+.items2{
+    background-color:  #00e3b5;
+}
+.items3{
+    background-color: #1f233e;
+}
+.items4 {
+    background-color: #04dbfa
+;
+}
+
 
 
 .service-item:hover.service-item h5 {
@@ -1731,6 +1801,33 @@ h2.about-pre-title {
     text-transform: uppercase;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-weight: 700;
+}
+.items2 svg{
+    margin-top: 17px;
+}
+.items3 h4{
+    color: #04dbfa;
+}
+.items3 svg {
+    fill: #04dbfa;
+    margin-top: 2px;
+}
+.items3 ul li {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.items4 h4 {
+    margin-right: 10px;
+}
+.service-item p {
+    color: var(--heading-color);
+    font-size: 20px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 .service-item i {
@@ -1850,63 +1947,75 @@ ul.extra-skills li i {
 
 .resume-wrapper .resume-box {
     margin-bottom: 20px;
-    background: var(--black-color);
+    background: #86868638;
     padding: 60px 40px;
     border-radius: 20px;
+        height: 340px;
+}
+.resume-wrapper .box1 {
+    background: #04dbfa;
+    color: #1f233e;
 }
 
 .resume-box h2 {
-    color: var(--main-color);
-    font-size: 24px;
+    color:  #1f233e;
+    font-size: 30px;
     text-transform: uppercase;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-weight: bolder;
+
+}
+.resume-area .icons {
+    width: 100px;
+    fill: #1f233e;
+    margin-top: 5px;
 }
 
 .resume-wrapper .resume-box:last-child {
     margin-bottom: 0
+}
+.resume-wrapper .resume-box ul , li{
+padding: 0 !important;
+    margin: 0;
 }
 
 .resume-wrapper .resume-box .resume-date {
     position: relative;
     display: inline-block;
     border-radius: 2em;
-    margin-bottom: 5px;
-    padding: 0px 1px;
-    margin-right: 20px;
-    font-weight: 400;
-    font-size: 15px;
+    font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
     -webkit-transition: linear 0.1s;
-    transition: linear 0.1s
+    transition: linear 0.1s;
+    color: #1f233e;
+
+}
+.resume-wrapper .box2 {
+    background-color:  #00e3b5;
+}
+.resume-wrapper .box3 {
+    background-color:   #1f233e;
+}
+.resume-wrapper .box3 ul .resume-date {
+    color: #fff;
+}
+.resume-wrapper .box3 h2{
+    color: #00e3b5;
+}
+.resume-wrapper .box3 .icons {
+    fill: #00e3b5;
+}
+.resume-wrapper .box4 {
+    background-color:  #9bcaea;
+}
+.resume-wrapper .box5 {
+    background-color:  #04dbfa;
 }
 
-.resume-wrapper .resume-box .resume-date:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -20px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 13px;
-    height: 1px;
-    border-top: 2px solid var(--primary-color);
-}
 
-.resume-wrapper .resume-box .resume-date:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -23px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    background: var(--primary-color);
-    width: 5px;
-    height: 5px;
-    border-radius: 50%
-}
 
 .resume-box p {
     margin-bottom: 0;
@@ -1996,16 +2105,18 @@ ul.extra-skills li i {
 * 09.PORTFOLIO CSS STYLE
 * ----------------------------------------------------------------------------------------
 */
-.projects-area {
-    background: var(--black-color);
-     padding: 100px 0px;
-    background: url(../images/custom/section-bg-gradient-1.jpg) no-repeat;
-    /* background-position: left center;
-    background-size: auto 100%; */
+.projects-area h4{
+   color:  #1f233e;
 }
 .projects-area p {
-    font-size: 20px; 
-    font-weight: 400;
+    font-size: 35px; 
+    font-weight: 800;
+}
+.projects-area2 p {
+    font-size: 24px; 
+    font-weight: 200;
+    color: #1f233e;
+    margin-bottom: 40px;
 }
 
 
@@ -2412,21 +2523,42 @@ ul.extra-skills li i {
 * ----------------------------------------------------------------------------------------
 */
 .contact-area {
-    padding-top: 10px;
+    padding-top: 80px;
     padding-bottom: 100px;
-    background: url(../images/custom/section-bg-gradient-2.jpg) no-repeat;
-    background-position: right center;
+    position: relative;
 }
+.contact-area .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    z-index: -1;
+}
+
 
 .contact-form-area {
     padding: 50px 30px 20px 40px;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    background: var(--black-color);
+    border-radius: 20px;
+   border: 1px solid #86868667;
+   background: white;
+    position: relative;
+    z-index: 1;
+
+}
+::placeholder{
+    font-weight: 300;
+    color: gray;
 }
 
 .contact-form-area .form-group {
     margin-bottom: 32px;
+}
+.form-group .theme-btn {
+    border-radius: 10px;
+    color: white;
+    background-color:  #2e3bd9;
+    font-size: 17px;
 }
 
 .contact-form-area .form-group .for-icon {
@@ -2440,32 +2572,34 @@ ul.extra-skills li i {
 
 .contact-form-area .form-group .form-control {
     font-size: 16px;
-    color: var(--main-color);
+    color:  #1f233e;
     font-weight: 400;
     line-height: 1.3;
     padding: 19px 30px 19px 20px;
     background: transparent;
-    border: 1px solid var(--border-color);
+ border: 1px solid #86868667;
     border-radius: 10px;
     font-family: var(--text-font);
     text-align: right;
 }
 
 .contact-form-area .form-group input[type=text] {
-    color: var(--main-color);
+    color:  #1f233e
+;
 }
 
 .contact-form-area .form-group .form-control:focus {
     box-shadow: none;
     background: transparent;
-    border-color: var(--border-color);
+ border: 1px solid #86868667;
+
 }
 
 
 .contact-form-area .form-group label {
     font-size: 16px;
-    color: var(--main-color);
-    font-weight: 400;
+    color:  #1f233e;
+    font-weight: 800;
     margin-bottom: 18px;
     text-transform: uppercase;
 }
@@ -2503,13 +2637,15 @@ ul.extra-skills li i {
     padding-bottom: 1px;
 }
 
+
+
 .circle-btn i {
     font-size: 30px;
     color: var(--black-color);
 }
 
 .single-contact {
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 
 .single-contact p {
@@ -2534,17 +2670,21 @@ ul.extra-skills li i {
 }
 
 .contact-content-part h2 {
-   font-size: 30px;
+   font-size: 20px;
     text-transform: uppercase;
     margin: 35px 0;
+    color:  #1f233e;
+    font-weight: 800;
 }
 
 .contact-content-part p {
-    font-size: 20px;
+    font-size: 19px;
+    color:  #1f233e
+;
 }
 
 .contact-content-part img {
-    width: 170px;
+    width: 250px;
   
     margin-bottom: 40px;
 }
@@ -2552,7 +2692,24 @@ ul.extra-skills li i {
 .contact-page-content h6 {
     font-size: 18px;
     margin-bottom: 22px;
-    color: rgb(119, 119, 125);
+    color:  #1f233e;
+}
+.contact-content-part .contact-social{
+    color:  #2e3bd9;
+}
+.contact-content-part .contact-social-icon a svg {
+ 
+    fill: rgba(128, 128, 128, 0.459);
+    margin-right: 5px;
+}
+.contact-content-part .location svg{
+    fill:  #2e3bd9;
+    width: 35px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.contact-content-part .location p {
+    font-weight: 800;
 }
 
 .contact-page-content .social-style-one a {
@@ -2619,9 +2776,8 @@ ul.extra-skills li i {
 * 14.FOOTER CSS STYLE
 * ----------------------------------------------------------------------------------------
 */
-.main-footer {}
 
-.footer-bottom {}
+
 
 p.copy-left-text {
     color: var(--main-color);
@@ -2725,7 +2881,7 @@ body.loaded {
     top: 0;
     width: 100vw;
     height: 110vh;
-    fill: var(--body-background);
+    fill: black;
 }
 
 .preloader .preloader-heading .load-text {
