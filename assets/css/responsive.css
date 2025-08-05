@@ -1635,6 +1635,9 @@ Version      : 1.0
 /* .projects-area{
         padding-inline: 13px;
 } */
+ .sidebar__area .mean-nav .menu-last a {
+    color: white;
+ }
   .main-header  .logo img {
         width: 120px;
         margin-right: 45px;
